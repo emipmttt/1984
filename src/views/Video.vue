@@ -1,15 +1,77 @@
 <template>
-  <div>
+  <div style="text-align: center; background: #000">
     <video
-      src="https://cdn-cf-east.streamable.com/video/mp4/749vij.mp4?Expires=1624051680&Signature=TYBeuleOBLjtuW7C-X0Pow9g2MPSvE~-Xm8IOkVxwCC1H2kGqMP6q6LKhUXUSdPyD5OdckjtSCpmHEeOgHUqkAxnF-i-VhESBbngv91bACFCm3sG~kLy9rpshARCCzSHKqnnmcvFgiEKhQUbke5E5uNGNySQK6OgIuLlqMkD5jvztLfCtVb64gAImo-a9N8n-dACeZ6wYAENKHmG2h~N70Yti47OzP05B~cTpTm8VTEXBkQlxFQlTBX8dXlqiWuNhi4baEatjFz9~1Sc3Qy32-LYW7G6sCpd~3VT7LSED~mSshJPn5SQhNB038-4cQ4qGehIiPWpq7X6GwYoPOy7yA__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ"
-      controls
+      :src="video.src"
+      autoplay
+      style="height: 100vh; display: inline-block"
+      @ended="showQuestion = true"
     ></video>
+    <div v-if="showQuestion" class="question">
+      <div class="question__content">
+        <img
+          :src="require('@/assets/img/gh.png')"
+          style="display: inline-block"
+        />
+        <br />
+        <h1 class="text-2xl">
+          {{ video.question }}
+        </h1>
+        <br />
+        <button
+          @click="goToNewVideo(option.video)"
+          v-for="option in video.options"
+          :key="option.video"
+          class="mb-4 block mx-auto"
+        >
+          {{ option.text }}
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import video from "../utils/videos";
+export default {
+  data() {
+    return {
+      video: {},
+      showQuestion: false,
+    };
+  },
+  methods: {
+    goToNewVideo(src) {
+      this.$router.push("/video/" + src);
+      location.reload();
+    },
+  },
+  created() {
+    if (!this.$route.params.id) {
+      this.$router.push("/");
+    } else {
+      this.video = video(this.$route.params.id);
+    }
+  },
+};
 </script>
 
 <style>
+.question {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: calc(50% - 200px);
+  background: linear-gradient(to bottom, #000 50%, rgba(0, 0, 0, 0.7));
+  backdrop-filter: blur(10px);
+  color: white;
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.question__content {
+  text-align: center;
+  width: 100%;
+}
 </style>

@@ -47,20 +47,20 @@
                 <div class="box my-10">
                   <div class="left">
                     <div class="content text-justify">
+                         <h1 class="text-xl">COORDINADORA MTRA. NATALIA TRAVEN</h1>
+                      <p>
+                        <img
+                          :src="require('@/assets/img/enemies/natalia.jpeg')"
+                          alt=""
+                        />
+                      </p>
+                      <br />
                       <h1 class="text-xl">Emmanuel Goldstein</h1>
                       <p>
                         Miembro fundador de La Hermandad, grupo de oposición al
                         Partido.
                         <img
                           :src="require('@/assets/img/enemies/emmanuel.jpeg')"
-                          alt=""
-                        />
-                      </p>
-                      <br />
-                      <h1 class="text-xl">COORDINADORA MTRA. NATALIA TRAVEN</h1>
-                      <p>
-                        <img
-                          :src="require('@/assets/img/enemies/natalia.jpeg')"
                           alt=""
                         />
                       </p>

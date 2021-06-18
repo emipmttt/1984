@@ -1,22 +1,34 @@
 <template>
   <div class="page">
     <div class="container">
-      <div class="flex main-container">
-        <div class="flex-1 p-10 flex items-center justify-center">
+      <div class="md:flex main-container">
+        <div
+          class="
+            h-96
+            md:h-screen
+            md:flex-1
+            p-10
+            md:flex
+            md:items-center
+            md:justify-center
+          "
+        >
           <img
             class="elenco-background-1"
-            :src="require('@/assets/img/creatives/1.jpg')"
+            :src="require('@/assets/img/creatives/3.jpg')"
           />
           <img
             class="elenco-background-2"
-            :src="require('@/assets/img/creatives/2.jpg')"
+            :src="require('@/assets/img/creatives/4.jpg')"
           />
           <img
             class="elenco-background-3"
             :src="require(`@/assets/img/creatives/${currentPictureIndex}.jpg`)"
           />
         </div>
-        <div class="flex-1 flex items-center justify-center p-5">
+        <div
+          class="md:flex-1 md:flex md:items-center md:justify-center p-5 mt-10"
+        >
           <div>
             <Header />
 
@@ -97,13 +109,13 @@ export default {
   methods: {
     verifyPass() {
       if (this.password == "winstonsmith1984") {
-        this.$router.push("/video");
+        this.$router.push("/video/1");
       } else {
         this.message = "¡NO ERES MIEMBRO DEL PARTIDO!";
       }
     },
     changeCurrentPicture() {
-      if (this.currentPictureIndex == 18) {
+      if (this.currentPictureIndex == 10) {
         this.currentPictureIndex = 1;
       } else {
         this.currentPictureIndex = this.currentPictureIndex + 1;
