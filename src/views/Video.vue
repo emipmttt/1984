@@ -5,6 +5,7 @@
       autoplay
       style="height: 100vh; display: inline-block"
       @ended="showQuestion = true"
+      controls
     ></video>
     <div v-if="showQuestion" class="question">
       <div class="question__content">
@@ -41,8 +42,12 @@ export default {
   },
   methods: {
     goToNewVideo(src) {
-      this.$router.push("/video/" + src);
-      location.reload();
+      if (this.$route.params.id == "0") {
+        this.$router.push("/");
+      } else {
+        this.$router.push("/video/" + src);
+        location.reload();
+      }
     },
   },
   created() {
