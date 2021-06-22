@@ -96,6 +96,79 @@ export default (id) => {
         { text: "No", video: "13" },
       ],
     },
+    12: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/12.mp4",
+      question: "Winston Debería…",
+      options: [
+        { text: "Aceptar", video: "14" },
+        { text: "Guardar Silencio", video: "15" },
+      ],
+    },
+    13: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/13.mp4",
+      question: "Winston Debería…",
+      options: [
+        { text: "Aceptar", video: "14" },
+        { text: "Guardar Silencio", video: "15" },
+      ],
+    },
+    14: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/14.mp4",
+      question: "El guardia debería…",
+      options: [
+        { text: "Llevarse a Winston", video: "16" },
+        { text: "Llevarse a Parsons", video: "17" },
+      ],
+    },
+    15: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/15.mp4",
+      question: "FINAL ALTERNATIVO 2",
+      options: [{ text: "Regresar", video: "0" }],
+    },
+    16: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/16.mp4",
+      question: "FINAL ALTERNATIVO 3",
+      options: [{ text: "Regresar", video: "0" }],
+    },
+    17: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/17.mp4",
+      question: "Tortura a Winston…",
+      options: [
+        { text: "Estirarlo", video: "18" },
+        { text: "Electroshock", video: "19" },
+        { text: "Quitarle los dientes", video: "20" },
+      ],
+    },
+    18: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/18.mp4",
+      question: "¿Dispararle a Winston?...",
+      options: [{ text: "Sí", video: "21" }],
+    },
+    19: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/19.mp4",
+      question: "¿Dispararle a Winston?...",
+      options: [{ text: "Sí", video: "21" }],
+    },
+    20: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/20.mp4",
+      question: "¿Dispararle a Winston?...",
+      options: [{ text: "Sí", video: "21" }],
+    },
+    21: {
+      src:
+        "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/21.mp4",
+      question: "FINAL DEFINITIVO",
+      options: [{ text: "Regresar", video: "0" }],
+    },
   };
 
   return videos[id];
