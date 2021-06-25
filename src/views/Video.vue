@@ -42,8 +42,8 @@ export default {
   },
   methods: {
     goToNewVideo(src) {
-      if (this.$route.params.id == "0") {
-        this.$router.push("/");
+      if (src == "-1") {
+        this.$router.go("-1");
       } else {
         this.$router.push("/video/" + src);
         location.reload();

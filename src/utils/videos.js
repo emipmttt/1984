@@ -15,7 +15,7 @@ export default (id) => {
       question: "Ayudar a Ampleforth…",
       options: [
         { text: "Sí", video: "4" },
-        { text: "Sí Seguir caminando", video: "5" },
+        { text: "Seguir caminando", video: "5" },
       ],
     },
     3: {
@@ -76,7 +76,7 @@ export default (id) => {
       src:
         "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/9.mp4",
       question: "FINAL ALTERNATIVO 1",
-      options: [{ text: "Regresar", video: "0" }],
+      options: [{ text: "Regresar", video: "-1" }],
     },
     10: {
       src:
@@ -127,13 +127,13 @@ export default (id) => {
       src:
         "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/15.mp4",
       question: "FINAL ALTERNATIVO 2",
-      options: [{ text: "Regresar", video: "0" }],
+      options: [{ text: "Regresar", video: "-1" }],
     },
     16: {
       src:
         "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/16.mp4",
       question: "FINAL ALTERNATIVO 3",
-      options: [{ text: "Regresar", video: "0" }],
+      options: [{ text: "Regresar", video: "-1" }],
     },
     17: {
       src:
@@ -167,7 +167,7 @@ export default (id) => {
       src:
         "https://res.cloudinary.com/emipmt/video/upload/v1623952213/1984/21.mp4",
       question: "FINAL DEFINITIVO",
-      options: [{ text: "Regresar", video: "0" }],
+      options: [{ text: "Regresar", video: "-1" }],
     },
   };
 

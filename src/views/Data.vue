@@ -75,7 +75,7 @@
                         -Alejandro Pineda. ALEJANDRO PINEDA
                       </p>
                       <br /><br /><br />
-                      <img :src="require('@/assets/img/data/literaria.jpeg')" />
+                      <img :src="require('@/assets/img/creatives/3.jpg')" />
                     </div>
                   </div>
                 </div>
