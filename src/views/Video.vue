@@ -6,6 +6,7 @@
       style="height: 100vh; display: inline-block"
       @ended="showQuestion = true"
       controls
+      v-if="showVideo"
     ></video>
     <div v-if="showQuestion" class="question">
       <div class="question__content">
@@ -38,7 +39,13 @@ export default {
     return {
       video: {},
       showQuestion: false,
+      showVideo: true,
     };
+  },
+  computed: {
+    currentVideo() {
+      return this.$route.params.id;
+    },
   },
   methods: {
     goToNewVideo(src) {
@@ -46,16 +53,29 @@ export default {
         this.$router.go("-1");
       } else {
         this.$router.push("/video/" + src);
-        location.reload();
+        this.showQuestion = false;
+      }
+    },
+    setVideo() {
+      if (!this.$route.params.id) {
+        this.$router.push("/");
+      } else {
+        this.video = video(this.$route.params.id);
       }
     },
   },
+  watch: {
+    currentVideo() {
+      this.showVideo = false;
+      this.setVideo();
+
+      setTimeout(() => {
+        this.showVideo = true;
+      }, 500);
+    },
+  },
   created() {
-    if (!this.$route.params.id) {
-      this.$router.push("/");
-    } else {
-      this.video = video(this.$route.params.id);
-    }
+    this.setVideo();
   },
 };
 </script>
